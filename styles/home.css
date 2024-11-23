@@ -33,6 +33,24 @@ body {
     display: flex;
 }
 
+.dropdown-menu li {
+    display: block;
+    padding: 5px 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #000;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+
 .rodape {
     font-size: 0.84em;
     color: black;
@@ -87,9 +105,63 @@ header nav ul li {
     padding: 0 10px; /* Espaçamento horizontal interno */
 }
 
-
 header nav ul li button[disabled] {
     opacity: 0.8;
+}
+
+/* Estilos para o item do menu */
+header nav ul li.dropdown {
+    position: relative; /* Para o menu dropdown */
+}
+
+/* Menu dropdown */
+header nav ul li .dropdown-menu {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Faz o menu aparecer abaixo do item de menu */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    top: 100%; /* Aparece logo abaixo do item */
+    left: 0;
+    height: 165px;
+    min-width: 150px; /* Largura mínima do menu */
+    z-index: 1;
+}
+
+/* Menu dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Itens dentro do menu dropdown */
+.dropdown-menu li {
+    display: block; /* Faz cada item do dropdown ocupar a linha inteira */
+    width: 100%; /* Cada item ocupa toda a largura */
+}
+
+/* Links dentro do dropdown */
+.dropdown-menu li a {
+    display: block;
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilo de hover para os links do dropdown */
+.dropdown-menu li a:hover {
+    background-color: #676d18;
+    color: white;
+    border-radius: 5px;
+    transition-duration: .3s;
 }
 
 .btn a button {
@@ -159,6 +231,7 @@ header nav ul li button[disabled] {
 
 header .btn button:hover {
     background-color: #676d18;
+    color: white;
     box-shadow: 0px 0px 8px rgb(246, 245, 246, 0.6);
     transition-duration: .3s;
 }
