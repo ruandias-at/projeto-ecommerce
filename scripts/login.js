@@ -78,7 +78,7 @@ function validaLogin(event) {
     localStorage.setItem("user", JSON.stringify(userData));
 
     // Redireciona para a página home.html
-    window.location.href = "../Home/home.html";
+    window.location.href = "index.html";
     return true; // Retorna true se a validação passar
 }
 
@@ -95,7 +95,7 @@ function carregarUsuario() {
 // Adiciona os eventos de validação e carregamento do usuário ao carregar a página
 document.addEventListener("DOMContentLoaded", function() {
     validacao(); // Chama a validação ao carregar a página
-    if (window.location.pathname.includes('home.html')) {
+    if (window.location.pathname.includes('index.html')) {
         carregarUsuario(); // Carrega o nome do usuário na página home
     }
 });

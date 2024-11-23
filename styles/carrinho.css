@@ -21,7 +21,7 @@
 }
 
 body{
-    background-color: #dbdada;
+    background-color: #bebebe;
     height: 100vh;
 }
 
@@ -107,14 +107,19 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(184, 184, 184);
+    background-color: rgb(255, 255, 255);
     border-radius: 4px;
     padding: 1em;
     font-weight: bolder;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.222);
 }
 
 .produto-carrinho img {
     padding: 1em;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    border-radius: 20px;
 }
 
 .produto-carrinho:hover {
@@ -132,6 +137,7 @@ main {
     border-radius: 4px;
     border: 1px solid black;
     padding-bottom: 10px;
+    box-shadow: 5px 5px 5px RGB(0, 0, 0, 0.222);
 }
 
 #preco p {
