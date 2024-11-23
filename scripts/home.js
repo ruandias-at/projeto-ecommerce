@@ -177,5 +177,4 @@ function carregarMensagemBoasVindas() {
 // Chamar a função ao carregar a página
 document.addEventListener("DOMContentLoaded", carregarMensagemBoasVindas);
 
-
 reloadPage(); // Chama a função para renderizar o carrinho ao recarregar a página

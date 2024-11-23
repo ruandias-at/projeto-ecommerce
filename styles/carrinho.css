@@ -20,6 +20,10 @@
     align-items: center;
 }
 
+.rodape > h4 {
+    font-weight: normal;
+}
+
 body{
     background-color: #bebebe;
     height: 100vh;

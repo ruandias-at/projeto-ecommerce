@@ -28,7 +28,11 @@ body {
     align-items: center;
 }
 
-header>.interface {
+.rodape > h4 {
+    font-weight: normal;
+}
+
+header > .interface {
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     align-items: center;
@@ -138,7 +142,7 @@ header .btn button:hover {
     font-family: 'Courier New', Courier, monospace;
 }
 
-.carrinho-side>h3 {
+.carrinho-side > h3 {
     background-color: rgb(240, 240, 243);
     box-sizing: border-box;
     border-radius: 2px;
@@ -265,6 +269,7 @@ main {
 }
 
 .btn-remover {
+    margin-top: 7px;
     border-radius: 10px;
     background-color: rgb(255, 103, 103);   
     width: 50px;

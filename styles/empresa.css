@@ -27,6 +27,10 @@ html, body {
     align-items: center;
 }
 
+.rodape > h4 {
+    font-weight: normal;
+}
+
 body {
     background-color:  #5f2d81;
     height: 100vh; 
