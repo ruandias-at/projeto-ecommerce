@@ -1,6 +1,9 @@
 async function chamarApi(query) {
-    if (!query) return alert("Digite o produto");
-    const URL = `https://api.mercadolibre.com/sites/MLB/search?q=${query}`; // Monta a URL para a API
+    if (!query) {
+        alert("Digite o produto");
+        reloadPage();
+    }
+    const URL = `https://api.mercadolibre.com/sites/MLB/search?q=botafogo${query}`; // Monta a URL para a API
     const response = await fetch(URL); // Faz a requisição à URL
     const data = await response.json(); // Converte a resposta para JSON
     return data.results; // Retorna somente a lista de produtos
@@ -71,6 +74,13 @@ function adicionarAoCarrinho(title, thumbnail, price) {
 
     renderizarCarrinho(); // Atualiza a exibição do carrinho
     atualizarTotalCarrinho(); // Atualiza o total do carrinho
+};
+
+function toTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Adiciona a transição suave
+    });
 };
 
 // Função para renderizar os produtos do carrinho
