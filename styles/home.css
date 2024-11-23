@@ -1,5 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.barlow-regular {
+font-family: "Barlow", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.barlow-medium {
+font-family: "Barlow", sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+.barlow-bold {
+font-family: "Barlow", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Barlow";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +34,6 @@ body {
 }
 
 .rodape {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 0.9em;
     color: black;
     text-align: center;
@@ -33,11 +52,10 @@ body {
 }
 
 header > .interface {
-    font-family: 'Courier New', Courier, monospace;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #d099e7;
+    background-color: #000000;
     position: fixed;
     height: 10%;
     width: 100%;
@@ -97,6 +115,15 @@ header nav ul li button[disabled] {
 .btn input {
     height: 30px;
     min-width: 200px;
+    background-color: lightslategray;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.btn input::placeholder{
+    color: white;
+    text-indent: .6em;
 }
 
 .container-search {
@@ -126,6 +153,15 @@ header .btn button:hover {
     box-shadow: 0px 0px 8px rgb(246, 245, 246);
 }
 
+main > h1 {
+    font-size: 3em;
+    display: block;
+    margin-top: 100px;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.50);
+    text-indent: 2em;
+}
+
 .carrinho-side {
     width: 20%;
     height: 100%;
@@ -139,7 +175,6 @@ header .btn button:hover {
     border-radius: 2px;
     box-sizing: border-box;
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .carrinho-side > h3 {
@@ -264,6 +299,7 @@ main {
 }
 
 #welcome-message {
+    color: white;
     font-weight: bold;
     font-size: larger;
 }

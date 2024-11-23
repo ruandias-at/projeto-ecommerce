@@ -6,11 +6,13 @@ async function chamarApi(query) {
     return data.results; // Retorna somente a lista de produtos
 };
 
-async function pesquisarProduto() {
-    const termoBusca = document.getElementById("inputBusca").value.trim(); // Pega o termo de busca digitado
-    const produtos = await chamarApi(termoBusca);
-    renderizarProdutos(produtos); // Chama a função renderizarProdutos com os dados retornados
-};
+async function pesquisarProduto(termoBusca) {
+    const termo = termoBusca || document.getElementById('inputBusca').value.trim(); // Usa o parâmetro ou o valor do input.
+    
+    // Simulação de busca:
+    const produtos = await chamarApi(termo);
+    renderizarProdutos(produtos); // Renderiza os produtos encontrados.
+}
 
 document.getElementById("inputBusca").addEventListener("keyup", function(event) {
     if (event.key === "Enter") pesquisarProduto(); // Adiciona evento para realizar busca ao pressionar 'Enter'
@@ -174,7 +176,9 @@ function carregarMensagemBoasVindas() {
     }
 }
 
-// Chamar a função ao carregar a página
-document.addEventListener("DOMContentLoaded", carregarMensagemBoasVindas);
+document.addEventListener('DOMContentLoaded', function () {
+    pesquisarProduto('botafogo'); // Realiza a busca automática por "botafogo".
+    carregarMensagemBoasVindas(); // Carrega a mensagem de boas vindas no cabeçalho da página
+});
 
 reloadPage(); // Chama a função para renderizar o carrinho ao recarregar a página
