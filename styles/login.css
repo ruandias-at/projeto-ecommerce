@@ -30,7 +30,7 @@ section#login {
 }
 
 section#login > div#imagem {
-    background: #f3f1f6 url(../imagens/Alura.jpeg) no-repeat;
+    background: #f3f1f6 url(../images/banner-login.jpeg) no-repeat;
     background-size: cover;
     height: 200px;
     background-position: left top;
