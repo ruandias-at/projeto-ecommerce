@@ -1,15 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.barlow-regular {
+font-family: "Barlow", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.barlow-medium {
+font-family: "Barlow", sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+.barlow-bold {
+font-family: "Barlow", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Barlow", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    background-color: #faf9fb;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; 
+html,
+body {
+    height: 100vh;
+    max-width: 100%;
+    background-image: linear-gradient(to top,rgb(44, 44, 44), #161616 );
+    display: flex;
 }
 
 main {
@@ -20,20 +41,23 @@ main {
 }
 
 section#login {
-    position: relative;
+    position: absolute;
     background-color: white;
     height: 515px;
     width: 250px;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.822);
+    box-shadow: 0px 0px 15px rgba(224, 224, 224, 0.622);
     overflow: hidden; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 section#login > div#imagem {
-    background: #f3f1f6 url(../images/banner-login.jpeg) no-repeat;
+    background: #f3f1f6 url(../images/banner-login.jpg) no-repeat;
     background-size: cover;
     height: 200px;
-    background-position: left top;
+    background-position: center center;
 }
 
 section#login > div#formulario {
@@ -45,7 +69,7 @@ form > input[type=submit] {
     font-size: 1em;
     width: 100%;
     height: 40px;
-    background-color: #3e1269 ;
+    background-color: #3d3d3d;
     color: white;
     border: none;
     border-radius: 8px;
@@ -57,7 +81,9 @@ input[type=submit]:disabled {
 }
 
 form > input[type=submit]:hover {
-    background-color: #241c0e;
+    background-color: #676d18;
+    border: 2px solid gray;
+    transition: background-color .3s;
 } 
 
 form > a.botao {
@@ -68,7 +94,7 @@ form > a.botao {
     height: 40px;
     padding-top: 5px;
     margin-top: 5px;
-    background-color: #401469;
+    background-color: #3d3d3d;
     border:1px solid #241c0e ;
     border-radius: 7px;
     cursor: pointer;
@@ -77,21 +103,22 @@ form > a.botao {
 }
 
 form > a.botao:hover {
-    background-color: #241c0e;
+    background-color: #676d18;
+    transition: background-color .3s;
+    border: 2px solid gray;
 }
 
 form > a.botao > span {
     font-size: 1em;
-    
 }
 
 form > div.campo {
     background-color: #f3f0f7;
-    border: 1px solid #2c1353;
+    border: 1px solid #1a1a1a;
     width: 100%;
     height: 40px;
     color: white;
-    display: block;
+    display: block; 
     border-radius: 8px;
     margin: 5px 0px;
 }
@@ -112,10 +139,10 @@ div.campo > input {
     font-size: 1em;
     height: 100%;
     width: calc(100% - 44.5px);    
-    border: 1px solid #3d1163;
+    border: 1px solid #272727;
     border-radius: 8px;
     transform: translateY(-3px);
-    
+    text-indent: .5em;
 }
 
 div.campo >input:focus-within {
@@ -134,86 +161,191 @@ div.campo >input:focus-within {
     font-size: 20px;
 }
 
-.rodape{
-
-        font-family:'Times New Roman', Times, serif;
-        font-size: 0.9em;
-        color: black;
-        text-align:center;
-        bottom: 0;
-        width: 100%;
-        height: 4%;
-        position:absolute;
-        background-color:#d099e7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.rodape {
+    font-size: 0.84em;
+    color: black;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.6%;
+    position: fixed;
+    background-color: #696969;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .rodape > h4 {
     font-weight: normal;
 }
 
-body{
-    background-color:  #5f2d81;
-    height: 100vh; 
-}
-
-
-header > .interface{
-    font-family:'Courier New', Courier, monospace;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #d099e7;  
-    position: absolute;  
-    left: 0;  
-    right: 0;  
-    top: 1px;  
-    height: 90px;  
-    border-radius: p1x;
-    box-shadow: 0 0 25px 0 black;
- 
-    }
-header a{
-    color: black;
+header a {
     text-decoration: none;
     display: inline-block;
-    
 }
 
-header a:hover{
-    color: rgb(145, 68, 196);
-    transform: scale(1.10);
-    
+header > .interface {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Espaça uniformemente os itens */
+    background-color: #000000;
+    position: fixed;
+    height: 13%;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.393);
+    z-index: 1000;
+    padding: 0 20px; /* Espaçamento horizontal interno */
 }
 
-header nav ul{
-    list-style-type: none;  
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza verticalmente os itens da lista */
+    justify-content: space-evenly; /* Distribui os itens simetricamente */
+    width: 100%;
+    height: 100%; /* Ocupa toda a altura do header */
+    padding: 0; /* Remove margens extras */
+    margin: 0;
 }
 
 header nav ul li {
-    display: inline-block;
-    padding: 30px;
+    display: inline-flex; /* Garante flexibilidade */
+    align-items: center; /* Centraliza dentro do botão */
+    padding: 0 10px; /* Espaçamento horizontal interno */
 }
 
 header nav ul li button[disabled] {
     opacity: 0.8;
 }
 
-header .btn button{
-    
+/* Estilos para o item do menu */
+header nav ul li.dropdown {
+    position: relative; /* Para o menu dropdown */
+}
+
+/* Menu dropdown */
+header nav ul li .dropdown-menu {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Faz o menu aparecer abaixo do item de menu */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    top: 100%; /* Aparece logo abaixo do item */
+    left: 0;
+    height: 165px;
+    min-width: 150px; /* Largura mínima do menu */
+    z-index: 1;
+}
+
+/* Menu dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Itens dentro do menu dropdown */
+.dropdown-menu li {
+    display: block; /* Faz cada item do dropdown ocupar a linha inteira */
+    width: 100%; /* Cada item ocupa toda a largura */
+}
+
+/* Links dentro do dropdown */
+.dropdown-menu li a {
+    display: block;
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilo de hover para os links do dropdown */
+.dropdown-menu li a:hover {
+    background-color: #676d18;
+    color: white;
+    border-radius: 5px;
+    transition-duration: .3s;
+}
+
+.btn a button {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn button {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn input {
+    height: 30px;
+    min-width: 200px;
+    background-color: lightslategray;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-indent: .6em;
+}
+
+.btn input::placeholder{
+    color: rgb(207, 207, 207);
+    text-indent: .6em;
+}
+
+.btn input:hover {
+    background-color: #535252;
+    transition-duration: .7s;
+}
+
+.btn input:focus {
+    background-color: #535252;
+}
+
+.container-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin-right: 10px;
+}
+
+.container-search button {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.btn button {
     padding: 15px;
     font-size: 18;
-    font-weight: 100;
-    background-color: rgb(178, 52, 203);
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
     border: 0;
     border-radius: 30px;
     cursor: pointer;
-    position: relative; 
-    margin-right: 100px; 
+    position: flex;
+    justify-content: start;
 }
 
-header .btn button:hover{
-    box-shadow: 0px 0px 8px rgb(246, 245, 246);
+header .btn button:hover {
+    background-color: #676d18;
+    color: white;
+    box-shadow: 0px 0px 8px rgb(246, 245, 246, 0.6);
+    transition-duration: .3s;
+}
+
+.material-symbols-outlined {
+    text-indent: .2em;
 }

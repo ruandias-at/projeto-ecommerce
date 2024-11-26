@@ -12,7 +12,7 @@ tela grande: acima de 1200px
 
 @media screen and (min-width:768px) and (max-width:992px) {
     body {
-        background-image: linear-gradient(to top,#372049, #583375 );
+        background-image: linear-gradient(to top,rgb(44, 44, 44), #161616 );
     }
     
     section#login {
@@ -33,7 +33,7 @@ tela grande: acima de 1200px
 
 @media screen and (min-width:992px) {
     body {
-        background-image: linear-gradient(to top,#230b5b, #7507e4 );
+        background-image: linear-gradient(to top,rgb(44, 44, 44), #161616 );
     }
     section#login {
         width: 950px;
@@ -68,7 +68,7 @@ div#formulario > p {
 }
 
 form > div.campo {
-    background-color: #5f4b84;
+    background-color: #3a3a3a;
     width: 100%;
     height: 40px;
     color: white;
