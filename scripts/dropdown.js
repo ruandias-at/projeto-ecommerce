@@ -1,40 +1,33 @@
 const dropdown = document.querySelector('.dropdown');
 const dropdownMenu = document.querySelector('.dropdown-menu');
-
-// Variável para rastrear se o menu está aberto
-let menuOpen = false;
+const header = document.querySelector('header');
 
 // Função para abrir o menu
 function openMenu() {
     dropdownMenu.style.display = 'block';
-    menuOpen = true;
 }
 
 // Função para fechar o menu
 function closeMenu() {
     dropdownMenu.style.display = 'none';
-    menuOpen = false;
 }
 
-// Quando o mouse entra na área do dropdown, abre o menu
+// Abre o menu quando o mouse entra no dropdown
 dropdown.addEventListener('mouseenter', openMenu);
 
-// Quando o mouse sai da área do dropdown, não fecha o menu imediatamente
-dropdown.addEventListener('mouseleave', function(event) {
-    if (!dropdownMenu.contains(event.relatedTarget)) {
-        // Deixar o menu aberto enquanto o mouse estiver sobre ele
-        event.stopPropagation();
-    }
-});
-
-// Fechar o menu se o usuário clicar fora do dropdown
-document.addEventListener('click', function(event) {
-    if (!dropdown.contains(event.target)) {
+// Fecha o menu quando o mouse sai do dropdown e do header
+header.addEventListener('mouseleave', (event) => {
+    if (!header.contains(event.relatedTarget)) {
         closeMenu();
     }
 });
 
-// Impedir o fechamento do menu se o clique for dentro do menu
-dropdownMenu.addEventListener('click', function(event) {
-    event.stopPropagation();
+// Mantém o menu aberto se o mouse estiver dentro dele
+dropdownMenu.addEventListener('mouseenter', openMenu);
+
+// Fecha o menu se o mouse sair do dropdownMenu para fora do header
+dropdownMenu.addEventListener('mouseleave', (event) => {
+    if (!header.contains(event.relatedTarget)) {
+        closeMenu();
+    }
 });
