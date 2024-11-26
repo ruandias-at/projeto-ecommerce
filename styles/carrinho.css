@@ -1,94 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap');
+
 * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Barlow", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.rodape{
-    font-family:'Times New Roman', Times, serif;
-    font-size: 0.9em;
-    color: black;
-    text-align:center;
-    bottom: 0;
-    width: 100%;
-    height: 4%;
-    position:fixed;
-    background-color:#d099e7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.rodape > h4 {
-    font-weight: normal;
-}
-
-body{
-    background-color: #bebebe;
+body {
+    background-color: #ffffff;
     height: 100vh;
 }
 
-header > .interface{
-    font-family:'Courier New', Courier, monospace;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #d099e7;  
-    position: absolute;  
-    top: 0;
-    width: 100%;
-    height: 10%;  
-    border-radius: p1x;
-    box-shadow: 0 0 25px 0 black; 
-    }
-
-header a{
-    color: black;
+header a {
     text-decoration: none;
     display: inline-block;
-    
 }
 
-header a:hover{
-    color: rgb(145, 68, 196);
-    transform: scale(1.10);
-    
-}
-        
-header nav ul{
-    list-style-type: none;  
+header > .interface {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Espaça uniformemente os itens */
+    background-color: #000000;
+    position: fixed;
+    height: 13%;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.393);
+    z-index: 1000;
+    padding: 0 20px; /* Espaçamento horizontal interno */
 }
 
-header nav ul li{
-    display: inline-block;
-    padding: 30px;
-    
-    button [disabled]{
-        opacity: 0.8;
-    }   
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centraliza verticalmente os itens da lista */
+    justify-content: space-evenly; /* Distribui os itens simetricamente */
+    width: 100%;
+    height: 100%; /* Ocupa toda a altura do header */
+    padding: 0; /* Remove margens extras */
+    margin: 0;
 }
-header .btn button{
+
+header nav ul li {
+    display: inline-flex; /* Garante flexibilidade */
+    align-items: center; /* Centraliza dentro do botão */
+    padding: 0 10px; /* Espaçamento horizontal interno */
+}
+
+header nav ul li button[disabled] {
+    opacity: 0.8;
+}
+
+/* Estilos para o item do menu */
+header nav ul li.dropdown {
+    position: relative; /* Para o menu dropdown */
+}
+
+/* Menu dropdown */
+header nav ul li .dropdown-menu {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Faz o menu aparecer abaixo do item de menu */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 0;
+    top: 100%; /* Aparece logo abaixo do item */
+    left: 0;
+    height: 165px;
+    min-width: 150px; /* Largura mínima do menu */
+    z-index: 1;
+}
+
+/* Menu dropdown */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 0;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 1;
+    width: 100%;
+}
+
+/* Itens dentro do menu dropdown */
+.dropdown-menu li {
+    display: block; /* Faz cada item do dropdown ocupar a linha inteira */
+    width: 100%; /* Cada item ocupa toda a largura */
+}
+
+/* Links dentro do dropdown */
+.dropdown-menu li a {
+    display: block;
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilo de hover para os links do dropdown */
+.dropdown-menu li a:hover {
+    background-color: #676d18;
+    color: white;
+    border-radius: 5px;
+    transition-duration: .3s;
+}
+
+header .btn a button {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .btn button {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .btn button {
     padding: 15px;
     font-size: 18;
-    font-weight: 100;
-    background-color: rgb(178, 52, 203);
+    font-weight: 400;
+    background-color: rgb(255, 255, 255);
     border: 0;
     border-radius: 30px;
     cursor: pointer;
-    position: relative; 
-    margin-right: 100px; 
+    position: flex;
+    justify-content: start;
 }
 
-header .btn button:hover{
-    box-shadow: 0px 0px 8px rgb(246, 245, 246);
+header .btn button:hover {
+    background-color: #676d18;
+    color: white;
+    box-shadow: 0px 0px 8px rgb(246, 245, 246, 0.6);
+    transition-duration: .3s;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding-bottom: 2em;
 }
 
@@ -101,9 +159,7 @@ main {
 
 .produto-carrinho {
     width: 20%;
-
     min-width: 20vw;
-
     border: 1px solid #837e7e;
     margin: 1em;
     display: flex;
@@ -111,72 +167,64 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 4px;
+    background-color: #fff;
+    border-radius: 10px;
     padding: 1em;
-    font-weight: bolder;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.222);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.produto-carrinho:hover {
+    background-color: #47c6cf71;
+    border: 1px solid #dbdada;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .produto-carrinho img {
     padding: 1em;
     max-width: 100%;
     max-height: 100%;
-    margin: auto;
-    border-radius: 20px;
-}
-
-.produto-carrinho:hover {
-    background-color: #dbdada;
-    border: 1px solid #dbdada;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 #preco {
-    width: 15%;
-    margin-bottom: 2em;
-    margin-top: 2em;
+    border: 1px solid #837e7e;
+    border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    background-color: white;
-    border-radius: 4px;
-    border: 1px solid black;
-    padding-bottom: 10px;
-    box-shadow: 5px 5px 5px RGB(0, 0, 0, 0.222);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
 }
 
-#preco p {
-    padding: 1em;
+#preco > p {
+    font-weight: 500;
 }
 
 .btn-remover {
     border-radius: 10px;
-    background-color: rgb(255, 103, 103);
+    background-color: #ff6767;
     width: 80px;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.37);
     margin: 10px;
     padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn-remover:hover {
-    border-radius: 10px;
-    background-color: rgb(209, 18, 18);
-    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.37);
-    color: white;
-    transition-duration: .2s;
-    cursor: pointer;
+    background-color: #d11212;
+    color: #fff;
 }
 
-#btn-finalizar {
+#btn-finalizar, #btn-limpar {
     background-color: #4caf50;
-    color: white;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    transition: .3s;
     margin-top: 15px;
-    border: 2px solid gray;
+    transition: background-color 0.3s;
 }
 
 #btn-finalizar:hover {
@@ -185,19 +233,26 @@ main {
 
 #btn-limpar {
     background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    margin-top: 15px;
-    border: 2px solid gray;
 }
 
 #btn-limpar:hover {
     background-color: #ca322f;
-    border: 2px solid white;
-    transition-duration: .3s;
+}
+
+.rodape {
+    font-size: 0.84em;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 2.6%;
+    position: fixed;
+    background-color: #696969;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rodape > h4 {
+    font-weight: normal;
 }

@@ -11,30 +11,56 @@
 <body>
     <header>
         <div class="interface">
-            <div class="logo">
+            <div class="btn">
                 <a href="index.html">
-                    <img src="images/logo.png" width="230">
+                    <button>Home</button>
                 </a>        
             </div>
             <h1>Carrinho</h1>
             <nav class="menu">
                 <ul>
                     <li>
-                        <div class="btn">
+                        <!-- <div class="btn">
                             <a href="empresa/index.html">
-                                <button>Sobre a empresa</button>
+                                <button>Sobre nós</button>
                             </a>
-                        </div> 
+                            <ul class="dropdown-menu">
+                                <li><a href="empresa/missao.html">Missão</a></li>
+                                <li><a href="empresa/valores.html">Valores</a></li>
+                                <li><a href="empresa/visao.html">Visão</a></li>
+                            </ul>
+                        </div> -->
+                        <ul class="dropdown">
+                            <li class="dropdown-item">
+                                <div class="btn">
+                                    <button>Sobre Nós</button>
+                                </div>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="empresa/index.html">Empresa</a>
+                                    </li>
+                                    <li>
+                                        <a href="empresa/missao.html">Missão</a>
+                                    </li>
+                                    <li>
+                                        <a href="empresa/valores.html">Valores</a>
+                                    </li>
+                                    <li>
+                                        <a href="empresa/visao.html">Visão</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>  
                     </li>
-                    <li>
+                    <li> 
                         <div class="btn">
                             <a href="login.html">
                                 <button>Login</button>
                             </a>    
-                        </div> 
+                        </div>
                     </li>       
                 </ul>
-            </nav>                       
+            </nav>                  
         </div>    
     </header>
 
@@ -43,8 +69,8 @@
         <div id="preco">
             <p id="quantidade-itens">Quantidade de itens: 0</p>
             <p>Valor Total: R$ <span id="valor-total">0.00</span></p>
-            <button id="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
             <button id="btn-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
+            <button id="btn-finalizar" onclick="finalizarCompra()">Finalizar Compra</button>
         </div>
     </main>
     
@@ -53,5 +79,6 @@
     </footer>
 
     <script src="scripts/carrinho.js"></script>
+    <script src="scripts/dropdown.js"></script>
 </body>
 </html>
